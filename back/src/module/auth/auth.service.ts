@@ -37,7 +37,7 @@ export class AuthService {
       email: userFound.email,
     };
     const token = await this.jwtService.sign(userPlayLoad);
-    return { success: 'User registered successfully', token, user: userFound }
+    return { success: 'User logged in successfully', token, user: userFound }
   }
 
   async CreateUser(createUserDto: CreateUserDto) {
