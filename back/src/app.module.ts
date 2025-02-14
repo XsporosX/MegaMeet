@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { dbConfig } from './config/data-source';
+import { AuthModule } from './module/auth/auth.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -17,6 +19,14 @@ import { dbConfig } from './config/data-source';
         return dbOptions;
       },
     }),
+
+    JwtModule.register({
+      global: true,
+      signOptions: { expiresIn: '10h' },
+      secret: process.env.JWT_SECRET,
+    }),
+
+    AuthModule,
   ],
   controllers: [],
   providers: [],
