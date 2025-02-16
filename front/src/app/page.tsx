@@ -41,6 +41,9 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <div className="video_container">
+  <video src="/1469-147538044_small.mp4" autoPlay loop muted playsInline />
+</div>
       <footer>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
