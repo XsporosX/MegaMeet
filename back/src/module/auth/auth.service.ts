@@ -19,7 +19,7 @@ export class AuthService {
       where: { email: loginUser.email },
     });
     if (!userFound) {
-      throw new BadRequestException('Credenciales incorrectas');
+      throw new BadRequestException('Incorrect credentials');
     }
 
 
@@ -28,7 +28,7 @@ export class AuthService {
       userFound.password,
     );
     if (!isValidPassword) {
-      throw new BadRequestException('Credenciales incorrectas');
+      throw new BadRequestException('Incorrect credentials');
     }
 
     const userPlayLoad = {
