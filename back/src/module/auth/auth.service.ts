@@ -19,7 +19,7 @@ export class AuthService {
     });
 
     if (!userFound) {
-      throw new BadRequestException('Credenciales incorrectas');
+      throw new BadRequestException('Incorrect credentials');
     }
 
     const isValidPassword = await bcrypt.compare(
@@ -27,7 +27,7 @@ export class AuthService {
       userFound.password,
     );
     if (!isValidPassword) {
-      throw new BadRequestException('Credenciales incorrectas');
+      throw new BadRequestException('Incorrect credentials');
     }
 
     const userPlayLoad = {
