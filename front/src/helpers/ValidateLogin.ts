@@ -5,24 +5,24 @@ export const validationLogin = (values: ILoginProps): ILoginErrors => {
 
     //validar email
     if (!values.email) {
-        errors.email = 'El email es requerido';
+        errors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
-        errors.email = 'El email no es válido';
+        errors.email = 'Email is not valid';
     }
 
     //validar password
     if (!values.password) {
-        errors.password = 'El password es requerido';
+        errors.password = 'Password is required';
     } else if (values.password.length < 8) {
-        errors.password = 'El password debe tener al menos 8 caracteres';
+        errors.password = 'Password must be at least 8 characters';
     } else if (!/[A-Z]/.test(values.password)) {
-        errors.password = 'El password debe tener al menos una letra mayúscula';
+        errors.password = 'Password must contain at least one uppercase letter';
     } else if (!/[a-z]/.test(values.password)) {
-        errors.password = 'El password debe tener al menos una letra minúscula';
+        errors.password = 'Password must contain at least one lowercase letter';
     } else if (!/[0-9]/.test(values.password)) {
-        errors.password = 'El password debe tener al menos un número';
+        errors.password = 'Password must contain at least one number';
     } else if (!/[!@#$%^&*+-]/.test(values.password)) {
-        errors.password = 'El password debe tener al menos un caracter especial';
+        errors.password = 'Password must contain at least one special character';
     }
 
     return errors;
