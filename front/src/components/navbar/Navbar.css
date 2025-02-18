@@ -1,3 +1,36 @@
 .navbar {
-    /* height: 100vh; */
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+  
+  .notification_icon {
+    font-size: 2rem;
+  }
+  
+  .image-container {
+    width: 30px;
+    height: 30px;
+    color: white;
+  }
+  
+  .navbar_group1, .navbar_group2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .navbar-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .navbar-icon:hover {
+    transform: scale(1.2);
+  }
+  
