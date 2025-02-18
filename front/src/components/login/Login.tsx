@@ -61,7 +61,7 @@ function Login() {
             count with MegaMeet!
           </p>
           <p className="welcome_register">
-            Dont have an account? <Link href="#">Sign up</Link>
+            Dont have an account? <Link href="/register">Sign up</Link>
           </p>
         </section>
         <section className="login_content">
