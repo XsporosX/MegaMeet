@@ -54,7 +54,7 @@
     background: var(--foreground);
     border-radius: 0 1rem 1rem 0;
     color: var(--background);
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0 3rem;
 
     .login_title {
@@ -85,6 +85,7 @@
 
     .login_description {
       text-align: center;
+      margin-bottom: 1rem;
     }
 
     .login_form {

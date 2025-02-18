@@ -22,7 +22,6 @@ export class AuthService {
       throw new BadRequestException('Incorrect credentials');
     }
 
-
     const isValidPassword = await bcrypt.compare(
       loginUser.password,
       userFound.password,
@@ -37,34 +36,33 @@ export class AuthService {
       email: userFound.email,
     };
     const token = await this.jwtService.sign(userPlayLoad);
-    return { success: 'User logged in successfully', token, user: userFound }
+    return { success: 'User logged in successfully', token, user: userFound };
   }
 
   async CreateUser(createUserDto: CreateUserDto) {
     const UserEmail = await this.userRepo.findOne({
-      where: { email: createUserDto.email }
-    })
-    if(UserEmail) {
-      throw new BadRequestException('Email already exist')
+      where: { email: createUserDto.email },
+    });
+    if (UserEmail) {
+      throw new BadRequestException('Email already exist');
     }
 
     const hashedPasword = await bcrypt.hash(createUserDto.password, 10);
-    if(!hashedPasword) {
-      throw new BadRequestException('Password could not be hashed')
+    if (!hashedPasword) {
+      throw new BadRequestException('Password could not be hashed');
     }
 
     const newUser = this.userRepo.create({
       username: createUserDto.username,
-      email: createUserDto.email, 
-      password: hashedPasword
-    })
+      email: createUserDto.email,
+      password: hashedPasword,
+    });
 
-    const savedUser = await this.userRepo.save(newUser)
-      return {
-        id: savedUser.id,
-        username: savedUser.username,
-        email: savedUser.email
-    }
+    const savedUser = await this.userRepo.save(newUser);
+    return {
+      id: savedUser.id,
+      username: savedUser.username,
+      email: savedUser.email,
+    };
   }
-
 }
