@@ -28,8 +28,24 @@
         .welcome_description {
           text-align: center;
         }
-      }
 
+        .welcome_register {
+            font-size: 0.9rem;
+            text-align: center;
+      
+            a {
+              font-size: 1.1rem;
+              font-weight: bold;
+              color: white;
+              transition: 0.5s ease-in-out;
+      
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        
     .register_content {
       display: flex;
       flex-direction: column;
@@ -53,6 +69,18 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         color: transparent;
+      }
+
+      .register_social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+  
+        a {
+          font-size: 2rem;
+          color: #c5649e;
+        }
       }
 
       .register_description {

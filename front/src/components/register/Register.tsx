@@ -7,6 +7,7 @@ import { IRegisterProps, IRegisterErrors } from "@/interfaces/TypesRegister";
 import { validationRegister } from "@/helpers/ValidateRegister";
 import RegisterApi from "@/api/RegisterApi";
 import { useRouter } from "next/navigation";
+import { FaFacebookF, FaGoogle } from "react-icons/fa6";
 
 function Register() {
     const router = useRouter();
@@ -56,10 +57,21 @@ function Register() {
             enjoy a more organized and connected life. <br /> ¡Make every moment
             count with MegaMeet!
           </p>
+          <p className="welcome_register">
+            Already have a account? <Link href="/login">Sign In</Link>
+          </p>
         </section>
         <section className="register_content">
-            <h2 className="register_title">Register</h2>
-            <p className="login_description">
+            <h2 className="register_title">REGISTER</h2>
+            <div className="register_social">
+            <Link href="#">
+              <FaFacebookF />
+            </Link>
+            <Link href="">
+              <FaGoogle />
+            </Link> 
+            </div>
+            <p className="register_description">
             ¡Quick and easy create your account!
           </p>
             <form className="register_form" onSubmit={handleSubmit}>
