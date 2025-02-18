@@ -6,6 +6,29 @@
     padding: 4rem 8rem;
     overflow: hidden;
   
+    .welcome_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          45deg,
+          rgba(143, 62, 112, 1) 60%,
+          rgba(197, 100, 158, 1) 100%
+        );
+        border-radius: 1rem 0 0 1rem;
+        gap: 3rem;
+        padding: 0 3rem;
+    
+        .welcome_title {
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+    
+        .welcome_description {
+          text-align: center;
+        }
+      }
 
     .register_content {
       display: flex;
@@ -30,6 +53,11 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
         color: transparent;
+      }
+
+      .register_description {
+        text-align: center;
+        margin-bottom: 1rem;
       }
   
       .register_form {

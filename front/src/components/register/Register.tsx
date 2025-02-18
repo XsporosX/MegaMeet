@@ -46,8 +46,22 @@ function Register() {
 
     return (
         <div className="register_container">
+        <section className="welcome_content">
+          <h2 className="welcome_title">WELCOME BACK</h2>
+          <p className="welcome_description">
+            ¡Welcome to MegaMeet, the all-in-one platform that transforms your
+            life! <br /> Connect your conversations, meetings, tasks, events,
+            and thoughts in one place. <br /> Join us and discover how we can
+            simplify your everyday life. <br /> Easily log in or sign up now to
+            enjoy a more organized and connected life. <br /> ¡Make every moment
+            count with MegaMeet!
+          </p>
+        </section>
         <section className="register_content">
             <h2 className="register_title">Register</h2>
+            <p className="login_description">
+            ¡Quick and easy create your account!
+          </p>
             <form className="register_form" onSubmit={handleSubmit}>
           <div className="input_container">
             <input 
